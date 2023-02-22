@@ -21,3 +21,5 @@ iftop
 
 setcap cap_net_raw+ep $(which iftop)
 getcap $(which iftop) посмотрели какие права даны утилите
+
+capabilities -наиболее вероятное использование - настройка запуска докер-контейнеров
