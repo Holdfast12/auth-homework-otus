@@ -1,0 +1,23 @@
+setfacl -m u:testuser:r file1    дать права на файл
+getfacl file1
+setfacl -x u:testuser file1      удалить права
+
+capabilities (расширенные атрибуты)
+для процессов и для файлов
+
+getfattr -m - -d $(which ping)
+
+
+набор capabilities поддерживаемый ядром
+capsh --print
+
+к самому процессу capabilitites тоже применяются
+вывели capabilities set
+cat /proc/$$/status | grep -i cap
+
+man capabilities посмотреть на какие подсистемы можно дать права
+есть раздел capabilitiy sets
+iftop
+
+setcap cap_net_raw+ep $(which iftop)
+getcap $(which iftop) посмотрели какие права даны утилите
